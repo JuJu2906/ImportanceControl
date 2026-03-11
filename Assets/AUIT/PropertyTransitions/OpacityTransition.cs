@@ -9,9 +9,7 @@ namespace AUIT.PropertyTransitions{
     protected override TransitionType TransitionType => TransitionType.Alpha;
 
 	public override void Adapt(Layout layout){
-		Debug.Log("Layout Alpha: " + layout.Alpha);
-		bool focused = GetComponent<WindowGazeData>().gazeStay;
-		GetComponent<CanvasGroup>().alpha = focused ? 1f : layout.Alpha;
+		GetComponent<CanvasGroup>().alpha = layout.Alpha;
 	}
 }
 }

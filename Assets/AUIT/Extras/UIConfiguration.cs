@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AUIT.AdaptationObjectives.Definitions;
-using UnityEngine.Serialization;
+using UnityEngine;
 
 namespace AUIT.Extras
 {
@@ -42,7 +42,12 @@ namespace AUIT.Extras
 
         public override string ToString()
         {
-            return elements.First().ToString();
+            string result = "";
+            for (int i = 0; i < elements.Count(); i++)
+            {
+                result += elements[i].ToString();
+            }
+            return result;
         }
     }
 }

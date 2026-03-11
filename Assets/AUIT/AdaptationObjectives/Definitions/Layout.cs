@@ -48,7 +48,7 @@ namespace AUIT.AdaptationObjectives.Definitions
             set => _scale = value;
         }
 
-        private float _alpha;
+        private float _alpha = 1f;
         [JsonProperty("alpha")]
         public float Alpha
         {
@@ -110,25 +110,24 @@ namespace AUIT.AdaptationObjectives.Definitions
             _coordinateSystem = coordinateSystem;
         }
 
-        public Layout(string id, float alpha)
+        public Layout(string id, Vector3 position, Quaternion rotation, Vector3 scale, float alpha, CoordinateSystem coordinateSystem = CoordinateSystem.World)
         {
             _id=id;
+            _position = position;
+            _rotation = rotation;
+            _scale = scale;
+            _coordinateSystem = coordinateSystem;
             _alpha = alpha;
         }
 
         public Layout Clone()
         {
-            return new Layout(_id, _position, _rotation, _scale);
-        }
-
-        public Layout CloneAlpha()
-        {
-            return new Layout(_id, _alpha);
+            return new Layout(_id, _position, _rotation, _scale, _alpha);
         }
 
         public override string ToString()
         {
-            return "Position: " + _position + ", Rotation: " + _rotation + ", Scale: " + _scale;
+            return "Position: " + _position + ", Rotation: " + _rotation + ", Scale: " + _scale + ", Alpha: " + _alpha;
         }
 
     }

@@ -15,7 +15,7 @@ namespace AUIT.AdaptationObjectives.Objectives
         {
             float normalizedImportance = 1f/(1f + Mathf.Exp(-0.5f * GetComponent<WindowGazeData>().importance)*(1f/0.1f - 1f));
             float alpha = optimizationTarget.Alpha;
-            float importanceCost = Mathf.Pow(normalizedImportance - alpha, 2);
+            float importanceCost = Mathf.Abs(normalizedImportance - alpha);
             float focusCost = (GetComponent<WindowGazeData>().gazeStay == true) ? 1f - alpha : 1f;
             Debug.Log("Importance Cost: " + importanceCost);
             Debug.Log("Focus Cost: " + focusCost);
@@ -25,10 +25,17 @@ namespace AUIT.AdaptationObjectives.Objectives
 
         public override Layout OptimizationRule(Layout optimizationTarget, Layout initialLayout)
         {
-            float normalizedImportance = 1f/(1f + Mathf.Exp(-0.5f * GetComponent<WindowGazeData>().importance)*(1f/0.1f - 1f));
-            Layout result = optimizationTarget.CloneAlpha();
-            result.Alpha = normalizedImportance;
-            Debug.Log("Resulting Alpha: " + result.Alpha);
+            Layout result = optimizationTarget.Clone();
+            if (GetComponent<WindowGazeData>().gazeStay == true)
+            {
+                result.Alpha = 1f;
+            }
+            else
+            {
+                float normalizedImportance = 1f/(1f + Mathf.Exp(-0.5f * GetComponent<WindowGazeData>().importance)*(1f/0.1f - 1f));
+                result.Alpha = normalizedImportance;
+                Debug.Log("Resulting Alpha: " + result.Alpha);
+            }
             return result;
         }
         
