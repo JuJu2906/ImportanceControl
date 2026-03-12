@@ -423,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630de505552bffe4ebc0e9ef529ca421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AUIT.PropertyTransitions.OpacityTransition
+  duration: 0.5
 --- !u!114 &42015594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,6 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630de505552bffe4ebc0e9ef529ca421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AUIT.PropertyTransitions.OpacityTransition
+  duration: 0.5
 --- !u!114 &243381593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2685,6 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630de505552bffe4ebc0e9ef529ca421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AUIT.PropertyTransitions.OpacityTransition
+  duration: 0.5
 --- !u!114 &1683231464
 MonoBehaviour:
   m_ObjectHideFlags: 0
