@@ -6,7 +6,7 @@ using UnityEngine;
 namespace AUIT.PropertyTransitions{
 	public class OpacityTransition : PropertyTransition
 	{
-		public float duration = 0.5f;
+		public float duration = 0.49f;
 		private bool _adapting = false;
 		private float _currentAlpha;
 		private float _targetAlpha;
@@ -14,6 +14,7 @@ namespace AUIT.PropertyTransitions{
 
 		public override void Adapt(Layout layout){
 			transform.localScale = layout.Scale;
+
 			if (_adapting) return;
 			_currentAlpha = GetComponent<CanvasGroup>().alpha;
 			_targetAlpha = layout.Alpha;
@@ -25,15 +26,16 @@ namespace AUIT.PropertyTransitions{
 		private IEnumerator AnimateAlphaTransition()
 		{
 			float elapsed = 0f;
+			float deltaAlpha = _currentAlpha - _targetAlpha;
 
 			while(elapsed < duration){
-				float t = elapsed/duration;
-				float deltaAlpha = _currentAlpha - _targetAlpha;
-				GetComponent<CanvasGroup>().alpha += deltaAlpha * t;
+				float t = Time.deltaTime/duration;
+				GetComponent<CanvasGroup>().alpha -= deltaAlpha * t;
 				elapsed +=Time.deltaTime;
+				Debug.Log("Elapsed Time: " + elapsed);
 				yield return null;
 			}
-			_currentAlpha = _targetAlpha;
+			GetComponent<CanvasGroup>().alpha = _targetAlpha;
 			_adapting = false;
 		}
 	}
