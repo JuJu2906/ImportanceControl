@@ -290,6 +290,7 @@ MonoBehaviour:
   lastTimestamp: 0
   frequency: 0
   importance: 0
+  windowScale: 1
 --- !u!225 &42015584
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -373,7 +374,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42015582}
   m_LocalRotation: {x: 0, y: 0.2588191, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0, z: 4.1}
+  m_LocalPosition: {x: 0, y: 0, z: 8}
   m_LocalScale: {x: 0.002, y: 0.002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -790,6 +791,7 @@ MonoBehaviour:
   lastTimestamp: 0
   frequency: 0
   importance: 0
+  windowScale: 1
 --- !u!114 &243381591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,7 +924,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243381589}
   m_LocalRotation: {x: 0, y: -0.08715578, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0, y: 0, z: 4.1}
+  m_LocalPosition: {x: 0, y: 0, z: 8}
   m_LocalScale: {x: 0.002, y: 0.002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1492,10 +1494,10 @@ MonoBehaviour:
   - {fileID: 1683231457}
   - {fileID: 42015583}
   - {fileID: 243381590}
-  forgetFactorFreq: 0.5
+  forgetFactorFreq: 0.01
   forgetFactorImp: 0.1
-  weightFreq: 1
-  weightDwell: 0.5
+  weightFreq: 0.2
+  weightDwell: 0.8
   updateRate: 0.5
 --- !u!4 &892893141
 Transform:
@@ -2604,7 +2606,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683231452}
   m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: 0, z: 4.1}
+  m_LocalPosition: {x: 0, y: 0, z: 8}
   m_LocalScale: {x: 0.002, y: 0.002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2633,6 +2635,7 @@ MonoBehaviour:
   lastTimestamp: 0
   frequency: 0
   importance: 0
+  windowScale: 1
 --- !u!225 &1683231458
 CanvasGroup:
   m_ObjectHideFlags: 0

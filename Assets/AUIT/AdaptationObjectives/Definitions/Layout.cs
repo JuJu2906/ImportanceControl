@@ -48,7 +48,7 @@ namespace AUIT.AdaptationObjectives.Definitions
             set => _scale = value;
         }
 
-        private float _alpha = 1f;
+        private float _alpha = 0f;
         [JsonProperty("alpha")]
         public float Alpha
         {

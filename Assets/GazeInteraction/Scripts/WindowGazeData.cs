@@ -13,6 +13,12 @@ public class WindowGazeData : MonoBehaviour
     public float frequency = 0f;
     public float importance = 0f;
 
+    public float windowScale = 1f;
+
+    public void UpdateScale(){
+        windowScale = transform.localScale.x;
+    }
+
     public void UpdateGazeEnter(){
         gazeEnter = true;
         gazeStay = true;
@@ -25,10 +31,11 @@ public class WindowGazeData : MonoBehaviour
 
     public void UpdateFrequency(float currentTime, float forgetFactorFreq){
         if (gazeEnter) indicatorFreq = 1f;
-        frequency = frequency * Mathf.Exp(-1f * forgetFactorFreq * (currentTime - lastTimestamp)/(currentTime - lastTimestamp + 10));
+        frequency = frequency * Mathf.Exp(-1f * forgetFactorFreq * (currentTime - lastTimestamp));
+        Debug.Log("Frequency Delta Time" + (currentTime - lastTimestamp));
         frequency += indicatorFreq;
-        gazeEnter = false;
         if (gazeEnter) lastTimestamp = currentTime;
+        gazeEnter = false;
         indicatorFreq = 0f;
         Debug.Log("Frequency: " + frequency);
     }

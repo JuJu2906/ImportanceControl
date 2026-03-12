@@ -10,6 +10,7 @@ namespace AUIT.PropertyTransitions{
 
 	public override void Adapt(Layout layout){
 		GetComponent<CanvasGroup>().alpha = layout.Alpha;
+		transform.localScale = layout.Scale;
 	}
 }
 }
