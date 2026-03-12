@@ -1497,7 +1497,7 @@ MonoBehaviour:
   - {fileID: 42015583}
   - {fileID: 243381590}
   forgetFactorFreq: 0.01
-  forgetFactorImp: 0.1
+  forgetFactorImp: 0.05
   weightFreq: 0.2
   weightDwell: 0.8
   updateRate: 0.5
@@ -2687,7 +2687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630de505552bffe4ebc0e9ef529ca421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AUIT.PropertyTransitions.OpacityTransition
-  duration: 0.5
+  duration: 0.49
 --- !u!114 &1683231464
 MonoBehaviour:
   m_ObjectHideFlags: 0

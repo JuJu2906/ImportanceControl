@@ -13,29 +13,39 @@ namespace AUIT.PropertyTransitions{
 		protected override TransitionType TransitionType => TransitionType.Alpha;
 
 		public override void Adapt(Layout layout){
-			transform.localScale = layout.Scale;
-
 			if (_adapting) return;
 			_currentAlpha = GetComponent<CanvasGroup>().alpha;
 			_targetAlpha = layout.Alpha;
 
 			_adapting = true;
-			StartCoroutine(AnimateAlphaTransition());
+			StartCoroutine(AnimateAlphaTransition(layout));
 		}
 
-		private IEnumerator AnimateAlphaTransition()
+		private IEnumerator AnimateAlphaTransition(Layout layout)
 		{
 			float elapsed = 0f;
-			float deltaAlpha = _currentAlpha - _targetAlpha;
+			float deltaAlpha = _targetAlpha - _currentAlpha;
+
+			float targetScale = layout.Scale.x;
+			float currentScale = transform.localScale.x;
+			float deltaScale = targetScale - currentScale;
+
+			if (deltaAlpha >= 0f)
+				duration = 0.2f;
 
 			while(elapsed < duration){
 				float t = Time.deltaTime/duration;
-				GetComponent<CanvasGroup>().alpha -= deltaAlpha * t;
+				GetComponent<CanvasGroup>().alpha += deltaAlpha * t;
+
+				currentScale += deltaScale * t;
+				transform.localScale = new Vector3(currentScale, currentScale, 1f);
+
 				elapsed +=Time.deltaTime;
 				Debug.Log("Elapsed Time: " + elapsed);
 				yield return null;
 			}
 			GetComponent<CanvasGroup>().alpha = _targetAlpha;
+			transform.localScale = layout.Scale;
 			_adapting = false;
 		}
 	}

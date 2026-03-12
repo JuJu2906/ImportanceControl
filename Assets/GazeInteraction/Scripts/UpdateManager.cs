@@ -7,7 +7,7 @@ public class UpdateManager : MonoBehaviour
     private float interval = 0.5f;
 
     public float forgetFactorFreq = 0.01f;
-    public float forgetFactorImp = 0.1f;
+    public float forgetFactorImp = 0.05f;
 
     public float weightFreq = 0.2f;
     public float weightDwell = 0.8f;
