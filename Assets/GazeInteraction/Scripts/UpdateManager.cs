@@ -6,6 +6,13 @@ public class UpdateManager : MonoBehaviour
     private float timer = 0f;
     private float interval = 0.5f;
 
+    public float forgetFactorFreq = 0.5f;
+    public float forgetFactorImp = 0.1f;
+
+    public float weightFreq = 1f;
+    public float weightDwell = 0.5f;
+    public float updateRate = 0.5f;
+
     void Start(){
 
     }
@@ -15,8 +22,8 @@ public class UpdateManager : MonoBehaviour
 
         if (timer >= interval){
             foreach (WindowGazeData window in windows){
-                window.UpdateFrequency(Time.time);
-                window.UpdateImportance(timer);
+                window.UpdateFrequency(Time.time, forgetFactorFreq);
+                window.UpdateImportance(timer, forgetFactorImp, weightFreq, weightDwell, updateRate);
             }
             timer = 0f;
         }

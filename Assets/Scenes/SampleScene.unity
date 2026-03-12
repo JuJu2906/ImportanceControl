@@ -287,13 +287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WindowGazeData
   gazeEnter: 0
   gazeStay: 0
-  forgetFactorFreq: 0.5
-  forgetFactorImp: 0.1
-  indicatorFreq: 0
-  indicatorDwell: 0
-  weightFreq: 1
-  weightDwell: 0.5
-  updateRate: 0.5
   lastTimestamp: 0
   frequency: 0
   importance: 0
@@ -794,13 +787,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WindowGazeData
   gazeEnter: 0
   gazeStay: 0
-  forgetFactorFreq: 0.5
-  forgetFactorImp: 0.1
-  indicatorFreq: 0
-  indicatorDwell: 0
-  weightFreq: 1
-  weightDwell: 0.5
-  updateRate: 0.5
   lastTimestamp: 0
   frequency: 0
   importance: 0
@@ -1506,6 +1492,11 @@ MonoBehaviour:
   - {fileID: 1683231457}
   - {fileID: 42015583}
   - {fileID: 243381590}
+  forgetFactorFreq: 0.5
+  forgetFactorImp: 0.1
+  weightFreq: 1
+  weightDwell: 0.5
+  updateRate: 0.5
 --- !u!4 &892893141
 Transform:
   m_ObjectHideFlags: 0
@@ -2261,37 +2252,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292930027}
   m_CullTransparentMesh: 1
---- !u!1 &1405400255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1405400256}
-  m_Layer: 0
-  m_Name: ContextSource
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1405400256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405400255}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4502, y: -0.64754, z: 4.35969}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1405948445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,13 +2630,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WindowGazeData
   gazeEnter: 0
   gazeStay: 0
-  forgetFactorFreq: 0.5
-  forgetFactorImp: 0.1
-  indicatorFreq: 0
-  indicatorDwell: 0
-  weightFreq: 1
-  weightDwell: 0.5
-  updateRate: 0.5
   lastTimestamp: 0
   frequency: 0
   importance: 0
@@ -3299,4 +3252,3 @@ SceneRoots:
   - {fileID: 243381599}
   - {fileID: 892893141}
   - {fileID: 1221981499}
-  - {fileID: 1405400256}
