@@ -1418,11 +1418,11 @@ PrefabInstance:
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1798112603}
+      objectReference: {fileID: 1798112604}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1798112603}
+      objectReference: {fileID: 1798112604}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1433,19 +1433,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeExit
+      value: UpdateGazeExit
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeEnter
+      value: UpdateGazeEnter
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3459,11 +3459,11 @@ PrefabInstance:
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 116250982}
+      objectReference: {fileID: 116250983}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 116250982}
+      objectReference: {fileID: 116250983}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3474,19 +3474,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeExit
+      value: UpdateGazeExit
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeEnter
+      value: UpdateGazeEnter
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3938,11 +3938,11 @@ PrefabInstance:
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 273610636}
+      objectReference: {fileID: 273610637}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 273610636}
+      objectReference: {fileID: 273610637}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3953,19 +3953,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeExit
+      value: UpdateGazeExit
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeEnter
+      value: UpdateGazeEnter
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -4515,11 +4515,11 @@ PrefabInstance:
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 162700547}
+      objectReference: {fileID: 162700548}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 162700547}
+      objectReference: {fileID: 162700548}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -4530,19 +4530,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeExit
+      value: UpdateGazeExit
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeEnter
+      value: UpdateGazeEnter
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5595,11 +5595,11 @@ PrefabInstance:
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 273003296}
+      objectReference: {fileID: 273003297}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 273003296}
+      objectReference: {fileID: 273003297}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -5610,19 +5610,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeExit
+      value: UpdateGazeExit
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnGazeEnter
+      value: UpdateGazeEnter
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MyGazeInteraction, Assembly-CSharp
+      value: WindowGazeData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3886599483601382322, guid: 8c50be73379fdcf4c8677062771e2fd5, type: 3}
       propertyPath: OnGazeExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

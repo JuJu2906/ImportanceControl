@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 namespace AUIT.PropertyTransitions{
-	public class OpacityTransition : PropertyTransition
+	public class ImportanceTransition : PropertyTransition
 	{
 		public float duration = 0.49f;
 		private bool _adapting = false;

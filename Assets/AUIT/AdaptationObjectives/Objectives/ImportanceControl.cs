@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AUIT.AdaptationObjectives.Objectives
 {
-    public class OpacityControl : LocalObjective
+    public class ImportanceControl : LocalObjective
     {
         private float normalizedImportance;
 
