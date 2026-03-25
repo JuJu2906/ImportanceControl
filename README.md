@@ -27,12 +27,12 @@ You may also find additional prepared scenes in the same folder. These serve as 
    5.1 Once again in Project files, navigate to Assets/GazeInteraction/Prefabs which should also contain "Gaze_Interactable.prefab"
    5.2 Under the game object, drag and drop the "Gaze_Interactable.prefab"
    5.3 In the inspector of Gaze_interactable, under "Transform"
-   - set the scale to match the width and height of the game object
-   - set the position to 0,0,0
+      - set the scale to match the width and height of the game object
+      - set the position to 0,0,0
    5.4 In the inspector of Gaze_interactable, under "Events -> On Gaze Enter()", click on the "+" button
    5.5 Drag and drop your game object into the empty field
    5.6 Click on "No Function" and select "WindowGazeData -> UpdateGazeEnter()"
-   5.7 Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
+   5.7Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
 Now your game object is fully set in the scene, you can already interact with it and obtain Importance values.
 
 To use the adaptation objective, follow the remaining steps:
