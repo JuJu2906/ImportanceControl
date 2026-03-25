@@ -1,17 +1,15 @@
 # Importance Control: Gaze-based adaptation objective
 This repository contains
-- AUIT, a toolkit to support the design of adaptive user interfaces in XR,
-- VR Gaze Interaction System, a tool to obtain basic gaze-gameobject interaction information.<br />
-The base AUIT was extended by adding
+- AUIT, a toolkit to support the design of adaptive user interfaces in XR, ADD LINK TO REPO
+- VR Gaze Interaction System, a tool to obtain basic gaze-gameobject interaction information. [VR Gaze Interaction System](https://assetstore.unity.com/packages/tools/camera/vr-gaze-interaction-system-241337)
+  The base AUIT was extended by adding
 - WindowGazeData, a data structure for storing and updating various metric data and hyperparameters,
-- UpdateManager, a manager for continuously updating your gameobjects/windows, --- [DOUBLE CHECK PLEASE] ---
+- UpdateManager, a manager for continuously updating your gameobjects/windows,
 - ImportanceControl, an adaptation objective that evaluates and suggests opacity and resize adaptations,
 - ImportanceTransition, a transition property for applying smooth opacity and resize transitions,
 - and some minor changes to other base scripts.
 
 ## To run and use Importance Control
-The extended AUIT can be imported from github --- [INSERT GITHUB LINK FOR OUR STUFF] ---. Warning: It is important to note that the base AUIT does not fully provide the necessary framework for operating Importance Control.
-VR Gaze Interaction System can be imported from https://assetstore.unity.com/packages/tools/camera/vr-gaze-interaction-system-241337.
 
 ## Project & Importance Initialization
 Note: We used Unity Editor Version 6000.3.8f1 and a Universal 3D project.
@@ -40,21 +38,21 @@ Note: We used Unity Editor Version 6000.3.8f1 and a Universal 3D project.
   5.2 In the inspector, add the component "Update Manager"
 
 ## Game Object / Window Set-up
-1. Create a game object of your choice (e.g. "UI (Canvas) -> Image"), and set the Render Mode as "World Space"
+1. Create a game object of your choice (Currently limited to "UI (Canvas)"), and set the Render Mode as "World Space"
 2. Define the dimensions/geometric bounds for your entire game object (including its children)
 3. In the game object, add the component "Canvas Group" (Note: This is required for setting the opacity of the game object and its children simultaneously)
 4. Add another component called "Window Gaze Data"
 5. Set up the Gaze Interactable:
-  1. Once again in Project files, navigate to "GazeInteraction -> Prefabs" which should also contain "Gaze_Interactable.prefab"
-  2. Under the game object, drag and drop the "Gaze_Interactable.prefab"
-  3. In the inspector, under "Box Collider", do the following:
+  5.1 Once again in Project files, navigate to "GazeInteraction -> Prefabs" which should also contain "Gaze_Interactable.prefab"
+  5.2 Under the game object, drag and drop the "Gaze_Interactable.prefab"
+  5.3 In the inspector, under "Transform", set the scale to match the game object
+  5.4 In the inspector, under "Box Collider", do the following:
   - Set all Center values to 0
   - Set all Size values to 1
-  - Set the scale to match the game object
-  4. Under "Events -> On Gaze Enter()", click on the "+" button
-  5. Drag and drop your game object into the empty field
-  6. Click on "No Function" and select "WindowGazeData -> UpdateOnGazeEnter()"
-  7. Do the same thing for "On Gaze Exit()" with the corresponding "UpdateOnGazeExit()"
+  5.5 Under "Events -> On Gaze Enter()", click on the "+" button
+  5.6 Drag and drop your game object into the empty field
+  5.7 Click on "No Function" and select "WindowGazeData -> UpdateGazeEnter()"
+  5.8 Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
 6. Inside Update Manager, under "Windows", click on the "+" button, and drag your game object into the empty field
 Once your game object is fully set in the scene, you can already interact with it and obtain Importance values.
 
@@ -62,8 +60,7 @@ Once your game object is fully set in the scene, you can already interact with i
 1. Drag and drop the "AUIT.prefab" into your scene
 2. In the inspector, under "Game Objects To Optimize", click on the "+" button, and drag your game object(s) into the empty field
 3. Add the component "Interval Optimization Trigger", and set the "Interval" to 0.5
-4. Furthermore, add the components "Importance Control" and "Importance Transition"
-
+4. Furthermore, add both components "Importance Control" and "Importance Transition" to the game objects that you want to adapt
 ## Experimental Section
 If the calibration of your eye-tracking feels off, you may manually change the position of "Camera Rig" to your liking.
-You may also experiment with the hyperparameters provided (including tooltips) under WindowGazeData. For further explanation on how the hyperparameters interact with and affect Importance Control, refer to the methodology section of the report by Chanwook and Jawad.
+You may also experiment with the hyperparameters provided (including tooltips) under UpdateManager. For further explanation on how the hyperparameters interact with and affect Importance Control, refer to the methodology section of the report by Chanwook and Jawad.
