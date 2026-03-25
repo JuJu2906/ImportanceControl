@@ -24,15 +24,15 @@ You may also find additional prepared scenes in the same folder. These serve as 
 3. In the game object, add the component "Canvas Group" (Note: This is required for setting the opacity of the game object and its children simultaneously)
 4. Add another component called "Window Gaze Data" under Assets/Importance
 5. Set up the Gaze Interactable:
-   5.1 Once again in Project files, navigate to Assets/GazeInteraction/Prefabs which should also contain "Gaze_Interactable.prefab"
-   5.2 Under the game object, drag and drop the "Gaze_Interactable.prefab"
-   5.3 In the inspector of Gaze_interactable, under "Transform"
+   1. Once again in Project files, navigate to Assets/GazeInteraction/Prefabs which should also contain "Gaze_Interactable.prefab"
+   2. Under the game object, drag and drop the "Gaze_Interactable.prefab"
+   3. In the inspector of Gaze_interactable, under "Transform"
       - set the scale to match the width and height of the game object
       - set the position to 0,0,0
-   5.4 In the inspector of Gaze_interactable, under "Events -> On Gaze Enter()", click on the "+" button
-   5.5 Drag and drop your game object into the empty field
-   5.6 Click on "No Function" and select "WindowGazeData -> UpdateGazeEnter()"
-   5.7Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
+   4. In the inspector of Gaze_interactable, under "Events -> On Gaze Enter()", click on the "+" button
+   5. Drag and drop your game object into the empty field
+   6. Click on "No Function" and select "WindowGazeData -> UpdateGazeEnter()"
+   7. Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
 Now your game object is fully set in the scene, you can already interact with it and obtain Importance values.
 
 To use the adaptation objective, follow the remaining steps:
