@@ -15,7 +15,7 @@ public class WindowGazeData : MonoBehaviour
 
     [Header("Window attributes")]
 
-    [Tooltip("Stores the current scale of the window. Assumes x-scale and y-scale are equal")]
+    [Tooltip("Stores the current scale of the window. Assumes x-scale and y-scale are proportional")]
     public float windowScale = 1f;
 
     [Header("Gaze Data")]
@@ -29,6 +29,12 @@ public class WindowGazeData : MonoBehaviour
     [Tooltip("True while the user is looking at the game object.")]
     public bool gazeStay = false;
 
+    public float lowerBoundAlpha = 0.1f;
+
+    public float growthSpeed = 0.3f;
+
+    public float rescaleCoefficient = 0.05f;
+
     private bool gazeEnter = false;
     private float indicatorFreq = 0f;
     private float indicatorDwell = 0f;
@@ -36,8 +42,12 @@ public class WindowGazeData : MonoBehaviour
 
     #endregion
 
-    public void UpdateScale(){
+    public void InitializeValues(float lba, float gs, float rc){
         windowScale = transform.localScale.x;
+        lowerBoundAlpha = lba;
+        growthSpeed = gs;
+        rescaleCoefficient = rc;
+
     }
 
     public void UpdateGazeEnter(){

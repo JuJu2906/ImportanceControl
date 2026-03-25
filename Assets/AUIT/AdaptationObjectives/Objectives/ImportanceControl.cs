@@ -12,10 +12,6 @@ namespace AUIT.AdaptationObjectives.Objectives
     public class ImportanceControl : LocalObjective
     {
         #region Variables
-        [Tooltip("")]
-        public float lowerbound = 0.1f;
-        public float growthSpeed = 0.3f;
-        public float rescaleCoefficient = 0.05f;
         private float normalizedImportance;
         #endregion
 
@@ -29,7 +25,7 @@ namespace AUIT.AdaptationObjectives.Objectives
         /// 
         public override float CostFunction(Layout optimizationTarget, Layout initialLayout = null)
         {
-            float normalizedImportance = 1f/(1f + Mathf.Exp(-growthSpeed * GetComponent<WindowGazeData>().importance)*(1f/lowerbound - 1f));
+            float normalizedImportance = 1f/(1f + Mathf.Exp(-GetComponent<WindowGazeData>().growthSpeed * GetComponent<WindowGazeData>().importance)*(1f/GetComponent<WindowGazeData>().lowerBoundAlpha - 1f));
             float alpha = optimizationTarget.Alpha;
             float importanceCost = Mathf.Abs(normalizedImportance - alpha);
             float focusCost = (GetComponent<WindowGazeData>().gazeStay == true) ? 1f - alpha : 1f;
@@ -41,7 +37,7 @@ namespace AUIT.AdaptationObjectives.Objectives
         /// </summary>
         /// <param name="optimizationTarget"></param>
         /// <param name="initialLayout"></param>
-        /// <returns></returns>
+
         public override Layout OptimizationRule(Layout optimizationTarget, Layout initialLayout)
         {
             Layout result = optimizationTarget.Clone();
@@ -53,9 +49,9 @@ namespace AUIT.AdaptationObjectives.Objectives
             }
             else
             {
-                float normalizedImportance = 1f/(1f + Mathf.Exp(-growthSpeed * GetComponent<WindowGazeData>().importance)*(1f/lowerbound - 1f));
+                float normalizedImportance = 1f/(1f + Mathf.Exp(-GetComponent<WindowGazeData>().growthSpeed * GetComponent<WindowGazeData>().importance)*(1f/GetComponent<WindowGazeData>().lowerBoundAlpha - 1f));
                 result.Alpha = normalizedImportance;
-                float rescale = Mathf.Pow(normalizedImportance, rescaleCoefficient) * xyscale;
+                float rescale = Mathf.Pow(normalizedImportance, GetComponent<WindowGazeData>().rescaleCoefficient) * xyscale;
                 result.Scale = new Vector3(rescale, rescale, 1f);
             }
             return result;

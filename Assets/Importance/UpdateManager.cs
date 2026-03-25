@@ -29,17 +29,26 @@ public class UpdateManager : MonoBehaviour
     [Tooltip("The learning rate of the Importance update. Higher values mean faster growth and higher upper limit upon indefinite gaze-stay.")]
     public float learningRate = 0.5f;
 
+    [Tooltip("The lower bound of a window's opacity. Alpha value will not fall below this threshold during adaptations.")]
+    public float lowerBoundAlpha = 0.1f;
+
+    [Tooltip("The speed in which the Importance value grows. Higher values mean steeper growth curve. Respectively lower values mean shallower growth curve")]
+    public float growthSpeed = 0.3f;
+
+    [Tooltip("The coefficient remaps the rescale interval proportional to the alpha value. As the value approaches 1, the scale and alpha values update equivalently. Lower values result in raising the minimum threshold for the scale. For further elaboration, refer to the methodolgy section in the report.")]
+    public float rescaleCoefficient = 0.05f;
+
     private float interval = 0.5f;
     private float timer = 0f;
 
     #endregion
 
     /// <summary>
-    /// Gets the scale of each window respectively. The scale is used to know the 100% size of the windows.
+    /// Initializes the scale and various other parameters required for the Importance adaptation objective of each window respectively.
     /// </summary>
     void Start(){
         foreach (WindowGazeData window in windows){
-            window.UpdateScale();
+            window.InitializeValues(lowerBoundAlpha, growthSpeed, rescaleCoefficient);
         }
     }
 

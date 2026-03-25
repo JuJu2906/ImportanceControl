@@ -12,8 +12,7 @@ namespace AUIT.PropertyTransitions{
 	{
 		#region Variables
 		
-		[Tooltip("Duration of the transition in seconds.")]
-		public float duration = 0.49f;
+		private float duration = 0.5f;
 
 
 		private bool _adapting = false;

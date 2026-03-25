@@ -30,8 +30,6 @@ namespace AUIT.AdaptationTriggers
         {
             if (enabled == false)
                 return;
-
-            Debug.Log("Interval Optimization Running... FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUN");
             
             OptimizationResponse response = await Auit.OptimizeLayout();
             
