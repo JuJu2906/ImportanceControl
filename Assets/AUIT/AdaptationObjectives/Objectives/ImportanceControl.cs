@@ -1,28 +1,47 @@
+#region Includes
 using AUIT.AdaptationObjectives.Definitions;
 using AUIT.ContextSources;
 using AUIT.Extras.Datastructures;
 using UnityEngine;
-
+#endregion
 namespace AUIT.AdaptationObjectives.Objectives
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ImportanceControl : LocalObjective
     {
+        #region Variables
+        [Tooltip("")]
+        public float lowerbound = 0.1f;
+        public float growthSpeed = 0.3f;
+        public float rescaleCoefficient = 0.05f;
         private float normalizedImportance;
+        #endregion
 
+        public override ObjectiveType ObjectiveType => ObjectiveType.Importance;
 
-        public override ObjectiveType ObjectiveType => ObjectiveType.NotSpecified;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="optimizationTarget"></param>
+        /// <param name="initialLayout"></param>
+        /// 
         public override float CostFunction(Layout optimizationTarget, Layout initialLayout = null)
         {
-            float normalizedImportance = 1f/(1f + Mathf.Exp(-0.3f * GetComponent<WindowGazeData>().importance)*(1f/0.1f - 1f));
+            float normalizedImportance = 1f/(1f + Mathf.Exp(-growthSpeed * GetComponent<WindowGazeData>().importance)*(1f/lowerbound - 1f));
             float alpha = optimizationTarget.Alpha;
             float importanceCost = Mathf.Abs(normalizedImportance - alpha);
             float focusCost = (GetComponent<WindowGazeData>().gazeStay == true) ? 1f - alpha : 1f;
-            Debug.Log("Importance Cost: " + importanceCost);
-            Debug.Log("Focus Cost: " + focusCost);
             return Mathf.Min(importanceCost, focusCost);
         }
     
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="optimizationTarget"></param>
+        /// <param name="initialLayout"></param>
+        /// <returns></returns>
         public override Layout OptimizationRule(Layout optimizationTarget, Layout initialLayout)
         {
             Layout result = optimizationTarget.Clone();
@@ -34,11 +53,9 @@ namespace AUIT.AdaptationObjectives.Objectives
             }
             else
             {
-                float normalizedImportance = 1f/(1f + Mathf.Exp(-0.3f * GetComponent<WindowGazeData>().importance)*(1f/0.1f - 1f));
+                float normalizedImportance = 1f/(1f + Mathf.Exp(-growthSpeed * GetComponent<WindowGazeData>().importance)*(1f/lowerbound - 1f));
                 result.Alpha = normalizedImportance;
-                Debug.Log("Resulting Alpha: " + result.Alpha);
-                float rescale = Mathf.Pow(normalizedImportance, 0.05f) * xyscale;
-                Debug.Log("Window Scale: " + xyscale + ", and Rescale Value: " + rescale);
+                float rescale = Mathf.Pow(normalizedImportance, rescaleCoefficient) * xyscale;
                 result.Scale = new Vector3(rescale, rescale, 1f);
             }
             return result;

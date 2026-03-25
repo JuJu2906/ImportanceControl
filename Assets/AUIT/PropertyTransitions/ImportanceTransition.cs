@@ -1,17 +1,32 @@
+#region Includes
 using System.Collections;
 using AUIT.AdaptationObjectives.Definitions;
 using UnityEngine;
-
+#endregion
 
 namespace AUIT.PropertyTransitions{
+	/// <summary>
+	/// Handles the visual transition for a UI element based on Importance.
+	/// </summary>
 	public class ImportanceTransition : PropertyTransition
 	{
+		#region Variables
+		
+		[Tooltip("Duration of the transition in seconds.")]
 		public float duration = 0.49f;
+
+
 		private bool _adapting = false;
 		private float _currentAlpha;
 		private float _targetAlpha;
-		protected override TransitionType TransitionType => TransitionType.Alpha;
+		#endregion 
+		protected override TransitionType TransitionType => TransitionType.Visiblity;
 
+		/// <summary>
+		/// Starts adapting the UI element toward the values defined in the given layout.
+		/// If a previous transition is still in progress, it will ignore the new layout.
+		/// </summary>
+		/// <param name="layout"></param>
 		public override void Adapt(Layout layout){
 			if (_adapting) return;
 			_currentAlpha = GetComponent<CanvasGroup>().alpha;
@@ -21,6 +36,11 @@ namespace AUIT.PropertyTransitions{
 			StartCoroutine(AnimateAlphaTransition(layout));
 		}
 
+		/// <summary>
+		/// Animates alpha (opacity value) and scale from their current values to the target layout values over multiple frames.
+		/// </summary>
+		/// <param name="layout"></param>
+		/// <returns></returns>
 		private IEnumerator AnimateAlphaTransition(Layout layout)
 		{
 			float elapsed = 0f;
@@ -41,7 +61,6 @@ namespace AUIT.PropertyTransitions{
 				transform.localScale = new Vector3(currentScale, currentScale, 1f);
 
 				elapsed +=Time.deltaTime;
-				Debug.Log("Elapsed Time: " + elapsed);
 				yield return null;
 			}
 			GetComponent<CanvasGroup>().alpha = _targetAlpha;

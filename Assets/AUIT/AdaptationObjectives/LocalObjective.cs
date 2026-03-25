@@ -15,6 +15,7 @@ namespace AUIT.AdaptationObjectives
         UpdateCoordinateSystemOnMovement,
         LookTowards,
         PreferPreviousPositions,
+        Importance,
         NotSpecified,
     }
 

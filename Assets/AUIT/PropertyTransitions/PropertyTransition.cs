@@ -10,7 +10,7 @@ namespace AUIT.PropertyTransitions
         Rotation,
         Scale,
         CoordinateSystem,
-        Alpha
+        Visiblity
     }
     
     public abstract class PropertyTransition : MonoBehaviour
