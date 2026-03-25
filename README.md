@@ -1,66 +1,44 @@
 # Importance Control: Gaze-based adaptation objective
-This repository contains
-- AUIT, a toolkit to support the design of adaptive user interfaces in XR, ADD LINK TO REPO
-- VR Gaze Interaction System, a tool to obtain basic gaze-gameobject interaction information. [VR Gaze Interaction System](https://assetstore.unity.com/packages/tools/camera/vr-gaze-interaction-system-241337)
-  The base AUIT was extended by adding
+This repository contains:
+- [AUIT](https://github.com/joaobelo92/auit), a toolkit to support the design of adaptive user interfaces in XR
+- [VR Gaze Interaction System](https://assetstore.unity.com/packages/tools/camera/vr-gaze-interaction-system-241337), a tool to obtain basic gaze-gameobject interaction information
+The base AUIT was extended by adding
 - WindowGazeData, a data structure for storing and updating various metric data and hyperparameters,
 - UpdateManager, a manager for continuously updating your gameobjects/windows,
 - ImportanceControl, an adaptation objective that evaluates and suggests opacity and resize adaptations,
 - ImportanceTransition, a transition property for applying smooth opacity and resize transitions,
-- and some minor changes to other base scripts.
+- and some minor changes to other base scripts in AUIT.
 
 ## To run and use Importance Control
-
-## Project & Importance Initialization
 Note: We used Unity Editor Version 6000.3.8f1 and a Universal 3D project.
-1. Follow the documentation in https://developers.meta.com/horizon/documentation/unity/move-unity-getting-started/ to set up the essential environment.
-2. Add the following Building Blocks to your project:
-  - Camera Rig (delete Main Camera to replace it)
-  - Eye Gaze (will automatically attach to the Camera Rig in the scene)
-3. Manage the access and permissions of the camera:
-  3.1 In "Camera Rig", under the component "OVR Manager (Script)", do the following:
-    - "Quest Features -> Passthrough Support" = Required
-    - "Quest Features -> Eye Tracking Support" = Required
-    - "Permission Requests On Startup -> Eye Tracking" = on
-  3.2 Navigate to "Camera Rig -> Tracking Space -> LeftEyeAnchor -> Eye Gaze Left", and check if the following is true:
-    - Apply Position is on
-    - Apply Rotation is on
-    - Tracking Mode is set to "Head Space"
-4. Set up the Gaze Interactor:
-  4.1 In Project files, navigate to "GazeInteraction -> Prefabs" which should contain "Gaze_Interactor.prefab"
-  4.2 Under "Eye Gaze Left" in the hierarchy, Drag and drop the "Gaze_Interactor.prefab"
-  4.3 In the inspector, configure your preferred Max and Min Detection Distance (Note: We use [0,100])
-  4.4 Set the preferred "Time To Activate" (Note: We use 0.3)
-  4.5 Set Layer Mask to "Everything"
-  4.6 (optional) Enable reticle to test the focus accuracy
-5. Set up the Importance Manager:
-  5.1 Create an Empty Object (optionally name it "Importance Manager")
-  5.2 In the inspector, add the component "Update Manager"
+To use our tool, first clone this repository from GitHub to your local machine.
+After cloning the project, open it in Unity and navigate to the Assets/Scenes folder. There, you will find a prepared Base Scene that already includes the essential setup for getting started. You can duplicate this scene and use it as the foundation for your own project.
+Please make sure to follow the next steps in this guide for adding UI elements correctly.
+You may also find additional prepared scenes in the same folder. These serve as examples and can help you understand how to use the tool and structure your own project.
 
 ## Game Object / Window Set-up
-1. Create a game object of your choice (Currently limited to "UI (Canvas)"), and set the Render Mode as "World Space"
+1. Create a game object of your choice (currently limited to "UI (Canvas)"), and set the Render Mode as "World Space"
 2. Define the dimensions/geometric bounds for your entire game object (including its children)
 3. In the game object, add the component "Canvas Group" (Note: This is required for setting the opacity of the game object and its children simultaneously)
-4. Add another component called "Window Gaze Data"
+4. Add another component called "Window Gaze Data" under Assets/Importance
 5. Set up the Gaze Interactable:
-  5.1 Once again in Project files, navigate to "GazeInteraction -> Prefabs" which should also contain "Gaze_Interactable.prefab"
+  5.1 Once again in Project files, navigate to Assets/GazeInteraction/Prefabs which should also contain "Gaze_Interactable.prefab"
   5.2 Under the game object, drag and drop the "Gaze_Interactable.prefab"
-  5.3 In the inspector, under "Transform", set the scale to match the game object
-  5.4 In the inspector, under "Box Collider", do the following:
-  - Set all Center values to 0
-  - Set all Size values to 1
-  5.5 Under "Events -> On Gaze Enter()", click on the "+" button
-  5.6 Drag and drop your game object into the empty field
-  5.7 Click on "No Function" and select "WindowGazeData -> UpdateGazeEnter()"
-  5.8 Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
-6. Inside Update Manager, under "Windows", click on the "+" button, and drag your game object into the empty field
-Once your game object is fully set in the scene, you can already interact with it and obtain Importance values.
+  5.3 In the inspector of Gaze_interactable, under "Transform"
+   - set the scale to match the width and height of the game object
+   - set the position to 0,0,0
+  5.4 In the inspector of Gaze_interactable, under "Events -> On Gaze Enter()", click on the "+" button
+  5.5 Drag and drop your game object into the empty field
+  5.6 Click on "No Function" and select "WindowGazeData -> UpdateGazeEnter()"
+  5.7 Do the same thing for "On Gaze Exit()" with the corresponding "UpdateGazeExit()"
+Now your game object is fully set in the scene, you can already interact with it and obtain Importance values.
 
-## AUIT & Importance Adaptation Set-up
-1. Drag and drop the "AUIT.prefab" into your scene
-2. In the inspector, under "Game Objects To Optimize", click on the "+" button, and drag your game object(s) into the empty field
-3. Add the component "Interval Optimization Trigger", and set the "Interval" to 0.5
-4. Furthermore, add both components "Importance Control" and "Importance Transition" to the game objects that you want to adapt
+To use the adaptation objective, follow the remaining steps:
+1. Add both components "Importance Control" and "Importance Transition" to the game objects that you want to adapt
+2. Inside Update Manager inspector, under "Windows", click on the "+" button, and drag your game object into the empty field
+3. In the AUIT inspector, under "Game Objects To Optimize", click on the "+" button, and drag your game object(s) into the empty field
+
+
 ## Experimental Section
 If the calibration of your eye-tracking feels off, you may manually change the position of "Camera Rig" to your liking.
 You may also experiment with the hyperparameters provided (including tooltips) under UpdateManager. For further explanation on how the hyperparameters interact with and affect Importance Control, refer to the methodology section of the report by Chanwook and Jawad.
