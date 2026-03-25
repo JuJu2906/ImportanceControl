@@ -1,7 +1,7 @@
 # Importance Control: Gaze-based adaptation objective
 This repository contains
 - AUIT, a toolkit to support the design of adaptive user interfaces in XR,
-- VR Gaze Interaction System, a tool to obtain basic gaze-gameobject interaction information.
+- VR Gaze Interaction System, a tool to obtain basic gaze-gameobject interaction information.\
 The base AUIT was extended by adding
 - WindowGazeData, a data structure for storing and updating various metric data and hyperparameters,
 - UpdateManager, a manager for continuously updating your gameobjects/windows, --- [DOUBLE CHECK PLEASE] ---
